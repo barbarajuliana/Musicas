@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<title>Play Music</title>
+	<!-- CSS -->
+	<style>
+		.container {max-width: 960px;}
+		.lh-condensed { line-height: 1.25; }
+		body{
+			padding-top: 3.5rem;
+			background-image: url(http://notaalta.espm.br/wp-content/uploads/2013/11/DigitalMusic.jpg);
+			background-size: cover;
+		}
+		.fundo{
+			background-color: rgba(240,255,255,0.9);
+		}
+	</style>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container fundo">
+		<div class="py-5 text-center">
+			<h1>Musicas</h1>
+		</div>
+		<div class="col-md-12 order-md-2">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+					<p>Nome: <span th:text="${musica.nome}"></span></p>
+					<p>Artista: <span th:text="${musica.artista}"></span></p>
+					<p>Gênero: <span th:text="${musica.genero}"></span></p>
+					<p>Álbum: <span th:text="${musica.album}"></span></p>
+					<p>Lançamento: <span th:text="${musica.lancamento}"></span></p>
+					
+					<a class="btn btn-outline-primary  btn-lg btn-block" href="/listar" role="button">Voltar</a>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

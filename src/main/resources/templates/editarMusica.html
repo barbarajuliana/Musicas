@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<title>Play Music</title>
+	<!-- CSS -->
+	<style>
+		.container {max-width: 960px;}
+		.lh-condensed { line-height: 1.25; }
+		body{
+			padding-top: 3.5rem;
+			background-image: url(http://notaalta.espm.br/wp-content/uploads/2013/11/DigitalMusic.jpg);
+			background-size: cover;
+		}
+		.fundo{
+			background-color: rgba(240,255,255,0.9);
+		}
+	</style>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container fundo">
+		<div class="py-5 text-center">
+			<h1>Formulário das Músicas</h1>
+		</div>
+		<div class="col-md-12 order-md-2">
+			<h4 class="mb-3 text-center">Editar músicas</h4>
+			
+			<form class="needs-validation" novalidate th:object="${musica}" th:action="@{/cadastrar}" method="post">
+				<div class="row">
+				
+				<div class="col-md-8 offset-md-2">
+				
+					<input th:type= "hidden" th:field=" *{id}">
+					
+					<p> Nome: <input class="form-control" placeholder="ex.: Acordando o predio" type="text" th:field="*{nome}"></p>
+					<p th:errors="*{nome}"></p>
+					
+					<p> Artista: <input class="form-control" placeholder="ex.: Luan Santana" type="text" th:field="*{artista}"></p>
+					<p th:errors="*{artista}"></p>
+					
+					<p> Gênero: <select class="form-control"  th:field="*{genero}">
+						<option th:each="umGenero : ${todosGenero}" th:text="${umGenero}"
+							th:value="${umGenero}">Gênero</option>
+						</select></p>
+					<p th:errors="*{genero}"></p>
+					
+					<p> Álbum: <input class="form-control" placeholder="ex.: 1977" type="text" th:field="*{album}"></p>
+					<p th:errors="*{album}"></p>
+					
+					<p>Lançamento: <input class="form-control" placeholder="ex.: 2016" type="number" th:field="*{lancamento}"></p>
+					<p th:errors="*{lancamento}"></p>
+				
+					
+					<button class="btn btn-outline-success btn-lg btn-block" type="submit"> Atualizar </button>
+					<a class="btn btn-outline-primary  btn-lg btn-block" href="/listar" role="button">Voltar</a>
+				</div>
+				</div>
+			</form>
+			
+		</div>
+	</div>
+</body>
+</html>

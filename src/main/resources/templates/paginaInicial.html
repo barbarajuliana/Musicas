@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<title>Play Music</title>
+	<!-- CSS -->
+	<style>
+		.container {max-width: 300px;}
+		.lh-condensed { line-height: 1.2; }
+		body{
+			
+			background-image: url(http://notaalta.espm.br/wp-content/uploads/2013/11/DigitalMusic.jpg);
+			background-size: cover;
+		}
+		.fundo{
+		 	padding: 20px;
+    		margin: 200px auto;
+			background-color: rgba(240,255,255,0.9);
+		}
+	</style>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container fundo" align="center">
+		<div class="py-5 text-center">
+			<h1>Playlist</h1>
+		</div>
+		<div class="col-md-12 order-md-2">
+			
+			<form class="needs-validation" novalidate th:object="${musica}" th:action="@{/cadastrar}" method="post">
+				<div class="row">
+				<div class="col-md-4 offset-md-4">
+					<a class="btn btn-outline-info btn-lg btn-block" href="/novo" role="button"> Formulário </a>
+					<a class="btn btn-outline-warning btn-lg btn-block" href="/listar" role="button"> Listagem </a>
+					
+				</div>
+				</div>
+			</form>
+		</div>
+	</div>
+		
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
