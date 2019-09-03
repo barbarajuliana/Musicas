@@ -27,7 +27,14 @@
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-	<div class="container fundo" align="center">
+	<div class="container unauthenticated">
+	    Login com Facebook: <a href="/login">aqui</a>
+	</div>
+	
+	<div class="container authenticated" style="display:none">
+	    Nome: <span id="user"></span>
+	    
+	    <div class="container fundo" align="center">
 		<div class="py-5 text-center">
 			<h1>Playlist</h1>
 		</div>
@@ -43,7 +50,19 @@
 				</div>
 			</form>
 		</div>
+		</div>
 	</div>
+	
+	
+	<script type="text/javascript">
+	    $.get("/user", function(data) {
+	        $("#user").html(data.userAuthentication.details.name);
+	        $(".unauthenticated").hide()
+	        $(".authenticated").show()
+	    });
+	</script>
+
+	
 		
 </body>
 </html>

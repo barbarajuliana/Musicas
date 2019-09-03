@@ -22,8 +22,8 @@ public class MusicaController {
 	
 	@GetMapping("/")
 	public String paginaInicial() {
-		
-		return "paginaInicial";
+
+		return "index";
 	}
 	
 	@GetMapping("/novo")
