@@ -1,12 +1,21 @@
-security:
-   oauth2:
-    client:
-      clientId: 379072646319097
-      clientSecret: 1c4c91bf784b2d6d89e9208af47e1909
-      accessTokenUri: https://graph.facebook.com/oauth/access_token
-      userAuthorizationUri: https://www.facebook.com/dialog/oauth
-      tokenName: oauth_token
-      authenticationScheme: query
-      clientAuthenticationScheme: form
-    resource:
-      userInfoUri: https://graph.facebook.com/me
+facebook:
+  client:
+    clientId: 379072646319097
+    clientSecret: 1c4c91bf784b2d6d89e9208af47e1909
+    accessTokenUri: https://graph.facebook.com/oauth/access_token
+    userAuthorizationUri: https://www.facebook.com/dialog/oauth
+    tokenName: oauth_token
+    authenticationScheme: query
+    clientAuthenticationScheme: form
+  resource:
+    userInfoUri: https://graph.facebook.com/me
+google:
+  client:
+    clientId: 82718346004-7ktikvp57gbi4pm0tn6ni5ehtdij3579.apps.googleusercontent.com
+    clientSecret: GNfjIbrmIvwPtMSFWYPfFC_L
+    accessTokenUri: https://www.googleapis.com/oauth2/v3/token
+    userAuthorizationUri: https://accounts.google.com/o/oauth2/auth
+    clientAuthenticationScheme: form
+    scope: profile
+  resource:
+    userInfoUri: https://www.googleapis.com/userinfo/v2/me

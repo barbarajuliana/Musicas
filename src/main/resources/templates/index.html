@@ -45,7 +45,10 @@
 				<div class="col-md-4 offset-md-4">
 					
 					<div class="container unauthenticated">
-					    <a class="btn btn-outline-primary btn-lg btn-block" href="/login" role="button">Login com Facebook</a>
+					    <div>
+					    	<a class="btn btn-outline-primary btn-lg btn-block" href="/login/facebook" role="button">Login com Facebook</a>
+							<a class="btn btn-outline-primary btn-lg btn-block" href="/login/google" role="button">Login com Google</a>
+						</div>
 					</div>
 					
 					<div class="container authenticated" style="display:none">
@@ -55,13 +58,16 @@
 					  <div>
 					    <button onClick="logout()" class="btn btn-outline-danger btn-lg btn-block">Logout</button>
 					  </div>
-					</div>
-				<form class="needs-validation" novalidate th:object="${musica}" th:action="@{/cadastrar}" method="post">
-					<a class="btn btn-outline-info btn-lg btn-block" href="/novo" role="button"> Formulário </a>
-					<a class="btn btn-outline-warning btn-lg btn-block" href="/listar" role="button"> Listagem </a>
+					  
 					
-				
-				</form>
+					<br>
+					<div >
+						<form class="needs-validation" novalidate th:object="${musica}" th:action="@{/cadastrar}" method="post">
+							<a class="btn btn-outline-info btn-lg btn-block" href="/novo" role="button"> Formulário </a>
+							<a class="btn btn-outline-warning btn-lg btn-block" href="/listar" role="button"> Listagem </a>
+						</form>
+					</div>
+					</div>
 			</div>
 				
 				</div>
